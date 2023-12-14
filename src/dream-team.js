@@ -13,14 +13,12 @@ const { NotImplementedError } = require('../extensions/index.js');
  * createDreamTeam(['Olivia', 1111, 'Lily', 'Oscar', true, null]) => 'LOO'
  *
  */
-// && (members instanceof String)
 function createDreamTeam(members) {
   let res = '';
-  if((Array.isArray(members)) && (members.length !== 0)) {
+  if((Array.isArray(members)) && (members.length !== 0))
    for(let i = 0; i < members.length; i++)
       if(typeof members[i] === 'string')
         res += members[i].trimStart().toUpperCase().slice(0, 1);
-  }
   return res.length === 0 ? false : res.split('').sort().join('');
 }
 
