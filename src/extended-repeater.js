@@ -16,8 +16,8 @@ const { NotImplementedError } = require('../extensions/index.js');
  *
  */
 function repeater(str, options) {
-  let res = [];
-  let add = [];
+  let res = new Array;
+  let add = new Array;
   if(!options.additionSeparator) options.additionSeparator = '|';
   if(!options.additionRepeatTimes) options.additionRepeatTimes = 1;
   if(!options.separator) options.separator = '+';
