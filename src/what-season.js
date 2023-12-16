@@ -13,7 +13,7 @@ const { NotImplementedError } = require('../extensions/index.js');
  */
 function getSeason(date) {
   if (!date) return 'Unable to determine the time of year!';
-  if (!(date instanceof Date) || (Object.getOwnPropertyNames(date).length !== 0)) throw new Error('Invalid date!');
+  if (!(date instanceof Date) || Object.getOwnPropertyNames(date).length) throw new Error('Invalid date!');
   return ['winter', 'spring', 'summer', 'autumn'][Math.floor(((date.getMonth() + 1) % 12) / 3)];
 }
 

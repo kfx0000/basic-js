@@ -18,12 +18,11 @@ const HALF_LIFE_PERIOD = 5730;
  *
  */
 function dateSample(sampleActivity) {
-  if (((typeof sampleActivity === 'string' || 
+  return (((typeof sampleActivity === 'string' || 
         sampleActivity instanceof String)) && 
         !isNaN(Number(sampleActivity)) && 
         (+sampleActivity <= 15) && 
-        (+sampleActivity > 0)) return Math.ceil(Math.log(15 / sampleActivity) * 5730 / 0.693);
-  else return false;
+        (+sampleActivity > 0)) ? Math.ceil(Math.log(15 / sampleActivity) * 5730 / 0.693) : false;
 }
 
 module.exports = {
